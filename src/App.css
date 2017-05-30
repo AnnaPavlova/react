@@ -1,0 +1,36 @@
+.align-right {
+    float: right;
+}
+
+.align-left {
+    float: left;
+}
+.container:after{
+    display: block;
+    clear: both;
+    content:'';
+}
+.app-header {
+    overflow: hidden;
+    padding: 10px;
+}
+
+.app-title {
+    float: left;
+    margin:5px;
+}
+.app-main{
+    padding:10px;
+}
+.app-sidebar{
+    float: left;
+    width:37%;
+}
+.app-content{
+    float: right;
+    width:60%;
+}
+.content-scroll-holder{
+    height:500px;
+    overflow-y: scroll;
+}

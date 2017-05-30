@@ -1,0 +1,33 @@
+.checkbox{
+    display: inline-block;
+    width: 15px;
+    height:15px;
+    border: 1px #000 solid;
+    background: #fff;
+}
+
+.checked{
+    background: #000;
+}
+
+.checkbox-controller{
+    margin:5px;
+}
+
+.search-form{
+    display: inline-block;
+    position: relative;
+    border: 1px #000 solid;
+    padding: 5px;
+}
+
+.search-form .btn-clear{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.search-form input{
+    border: none;
+    margin-right:20px;
+}

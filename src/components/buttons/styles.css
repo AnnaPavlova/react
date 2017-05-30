@@ -1,0 +1,19 @@
+.btn{
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+    width:15px;
+    height:15px;
+}
+.btn-clear{
+    background: #f00;
+}
+.btn-edit{
+    background: #00f;
+}
+.btn-plus{
+    background: #0f0;
+}
+.btn-delete{
+    background: #f00;
+}
