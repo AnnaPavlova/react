@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 require('./styles.css');
 import {EditBtn, PlusBtn, DeleteBtn} from '../buttons/index';
 
@@ -9,7 +10,7 @@ export const CategoriesList = ({categories}) => (
 )
 
 CategoriesList.propTypes = {
-    items: React.PropTypes.array
+    items: PropTypes.array
 }
 
 export const Category = ({data}) =>(

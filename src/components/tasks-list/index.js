@@ -1,14 +1,15 @@
 import React from 'react';
-require('./styles.css');
+import PropTypes from 'prop-types';
 import {EditBtn} from '../buttons/index';
 import {Checkbox} from '../form/index';
+require('./styles.css');
 
-export const TasksList = ({ tasks }) => (
+export const TasksList = ({ tasks, onSelect }) => (
     <ul className="tasks-list">
         {tasks.map((item, index) => (
             <li className={item.isDone ? 'done' : ''} key={index}>
-                <Checkbox checked={item.isDone}/>
-                {item.title}
+                <Checkbox checked={item.isDone} onChange={ onSelect } />
+                    {item.title}
                 <EditBtn/>
             </li>
         ))}
@@ -16,5 +17,5 @@ export const TasksList = ({ tasks }) => (
 )
 
 TasksList.propTypes = {
-    items: React.PropTypes.array
+    items: PropTypes.array
 };

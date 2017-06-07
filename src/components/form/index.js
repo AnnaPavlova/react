@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {ClearBtn, AddBtn} from '../buttons/index';
 require('./styles.css');
 
 export class Checkbox extends Component{
-
+    constructor(...args) {
+        super(...args);
+        this.toggleChecked = this.toggleChecked.bind(this);
+    }
     toggleChecked (e){
-        e.preventDefault()
+        e.preventDefault();
         return this.props.onChange(!this.props.checked);
     }
     render (){
@@ -17,8 +21,8 @@ export class Checkbox extends Component{
     }
 }
 Checkbox.propTypes = {
-    checked: React.PropTypes.bool
-}
+    checked: PropTypes.bool
+};
 
 export class CheckboxController extends Component{
     onChange (isChecked){

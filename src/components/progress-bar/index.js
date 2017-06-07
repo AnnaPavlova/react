@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 require('./styles.css');
 
 export class ProgressBar extends Component{
@@ -9,12 +10,12 @@ export class ProgressBar extends Component{
         return (
             <div className="progress-bar" onClick={this.props.onClick}>
                 <div className="progress-container" style={progressStyles}>
-                    <div className="progress-holder"></div>
+                    <div className="progress-holder" />
                 </div>
             </div>
         )
     }
 }
 ProgressBar.propTypes = {
-    progress: React.PropTypes.number
-}
+    progress: PropTypes.number
+};

@@ -20,7 +20,25 @@ const todo = (state = {}, action) => {
     }
 }
 
-const todos = (state = 0, action) => {
+const initialState = [{
+    title: "To-Do Item #1",
+    description: "Some text",
+    isDone: false
+},{
+    title: "To-Do Item #2",
+    description: "Some text",
+    isDone: true
+},{
+    title: "To-Do Item #3",
+    description: "Some text",
+    isDone: true
+},{
+    title: "To-Do Item #4",
+    description: '',
+    isDone: true
+}];
+
+const todos = (state = initialState, action) => {
     switch (action.type) {
         case 'INCREMENT':
             console.log(state + 1)

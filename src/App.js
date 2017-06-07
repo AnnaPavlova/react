@@ -10,7 +10,11 @@ import store from './store';
 
 store.subscribe(data => {
     console.log(data);
-})
+});
+store.dispatch({
+    type: 'ANN',
+    payload: 'Learn redux'
+});
 
 // const Progress = connect(
 //     store => ({
@@ -22,19 +26,33 @@ store.subscribe(data => {
 // )(ProgressBar);
 
 var Progress = connect(
-    function (store) {
+    function (state) {
         return {
             progress: 66
         }
     },
     function (dispatch) {
         return {
-            onClick: function () {
+            onClick: function (e) {
                 return dispatch({type:'INCREMENT'});
             }
         }
     }
 )(ProgressBar);
+
+const Tasks = connect(
+    state => ({
+        tasks: state.todos.slice(0, 2)
+    }),
+    dispatch => ({
+        onSelect: (checked) => {
+            return dispatch({
+                type: 'CHECKBOX',
+                payload: checked
+            });
+        }
+    })
+)(TasksList);
 
 class App extends Component {
     getTasksToShow(){
@@ -79,6 +97,8 @@ class App extends Component {
                             <AddForm placeholder="Enter task title"/>
                             <div className="content-scroll-holder">
                                 <TasksList tasks={this.getTasksToShow()} />
+                                <hr/>
+                                <Tasks/>
                             </div>
                         </div>
                     </div>
