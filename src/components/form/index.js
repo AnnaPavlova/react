@@ -64,6 +64,10 @@ export class SearchForm extends Component{
 }
 
 export class AddForm extends Component{
+    constructor(...args) {
+        super(...args);
+        this.saveValue = this.saveValue.bind(this);
+    }
     saveValue (e){
         e.preventDefault();
         this.props.onSubmit(this.textInput.value)
@@ -72,7 +76,7 @@ export class AddForm extends Component{
         return (
             <div className="add-form">
                 <form action="#">
-                    <input ref={(input) => { this.textInput = input; }} type="text" value="" placeholder={this.props.placeholder}/>
+                    <input ref={(input) => { this.textInput = input; }} type="text" placeholder={this.props.placeholder}/>
                     <AddBtn onClick={this.saveValue}>Add</AddBtn>
                 </form>
             </div>

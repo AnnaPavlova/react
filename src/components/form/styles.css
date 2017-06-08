@@ -32,3 +32,7 @@
     border: none;
     margin-right:20px;
 }
+
+.add-form input[type='text']{
+    width:260px;
+}
