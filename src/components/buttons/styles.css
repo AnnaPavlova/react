@@ -1,15 +1,17 @@
 .btn{
-    display: block;
-    overflow: hidden;
-    text-indent: -9999px;
-    width:15px;
-    height:15px;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 15px;
+    min-width: 15px;
+    cursor: pointer;
+    border: 1px solid #000;
 }
 .btn-clear{
     background: #f00;
 }
 .btn-edit{
     background: #00f;
+    color: #fff;
 }
 .btn-plus{
     background: #0f0;

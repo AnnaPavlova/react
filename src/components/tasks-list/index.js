@@ -7,10 +7,10 @@ require('./styles.css');
 export const TasksList = ({ tasks, onSelect }) => (
     <ul className="tasks-list">
         {tasks.map((item, index) => (
-            <li className={item.isDone ? 'done' : ''} key={index}>
-                <Checkbox checked={item.isDone} onChange={ onSelect } />
+            <li className={item.completed ? 'completed' : ''} key={item.id}>
+                <Checkbox checked={item.completed} onChange={ onSelect } id={item.id}/>
                     {item.title}
-                <EditBtn/>
+                <EditBtn>Edit</EditBtn>
             </li>
         ))}
     </ul>

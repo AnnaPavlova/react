@@ -10,7 +10,7 @@ export class Checkbox extends Component{
     }
     toggleChecked (e){
         e.preventDefault();
-        return this.props.onChange(!this.props.checked);
+        return this.props.onChange(this.props.id);
     }
     render (){
         return (

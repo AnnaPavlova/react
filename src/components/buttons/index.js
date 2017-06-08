@@ -16,17 +16,25 @@ export const AddBtn = (props) => (
 );
 
 export const ClearBtn = (props) => (
-    <Btn {...props} className="btn btn-clear"/>
+    <Btn {...props} className="btn btn-clear">
+        {props.children}
+    </Btn>
 );
 
 export const EditBtn = (props) => (
-    <Btn {...props} className="btn btn-edit"/>
+    <Btn {...props} className="btn btn-edit">
+        {props.children}
+    </Btn>
 );
 
 export const PlusBtn = (props) => (
-    <Btn {...props} className="btn btn-plus"/>
+    <Btn {...props} className="btn btn-plus">
+        {props.children}
+    </Btn>
 );
 
 export const DeleteBtn = (props) => (
-    <Btn {...props} className="btn btn-delete"/>
+    <Btn {...props} className="btn btn-delete">
+        {props.children}
+    </Btn>
 );

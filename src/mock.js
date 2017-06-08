@@ -1,4 +1,31 @@
-export let mock = {
+export let stateMock = {
+    tasks: [{
+        title: "To-Do Item #1",
+        description: "Some text",
+        completed: false,
+        id: "1"
+    },{
+        title: "To-Do Item #2",
+        description: "Some text",
+        completed: true,
+        id: "2"
+    },{
+        title: "To-Do Item #3",
+        description: "Some text",
+        completed: true,
+        id: "3"
+    },{
+        title: "To-Do Item #4",
+        description: '',
+        completed: true,
+        id: "4"
+    }]
+}
+
+
+
+
+let mock = {
     isEditMode: false,
     filters: {
         showDone: true
