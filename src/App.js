@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import store from './store';
@@ -11,55 +11,45 @@ const Tasks = connect(
         tasks: state.tasks
     }),
     dispatch => ({
-        onToggleTask: (id) => {
-            return dispatch({
+        onToggleTask: id =>
+            dispatch({
                 type: 'TOGGLE_TASK',
                 payload: id
-            });
-        },
-        onRemoveTask: (id) => {
-            return dispatch({
+            }),
+        onRemoveTask: id =>
+            dispatch({
                 type: 'REMOVE_TASK',
                 payload: id
-            });
-        },
-        onEditTask: (id) => {
-            return dispatch({
+            }),
+        onEditTask: id =>
+            dispatch({
                 type: 'EDIT_TASK',
                 payload: id
-            });
-        }
+            })
     })
 )(TasksList);
 
 const AddTaskForm = connect(
-    state => ({
-        tasks: state.tasks
-    }),
+    null,
     dispatch => ({
-        onSubmit: (value) => {
-            return dispatch({
+        onSubmit: value =>
+            dispatch({
                 type: 'ADD_TASK',
                 payload: value
             })
-        }
     })
-)(AddForm)
+)(AddForm);
 
-class App extends Component {
-    render() {
-        return (
-            <div className="app">
-                <div className="app-header">
-                    <h1>Todo</h1>
-                </div>
-                <div className="app-main">
-                    <AddTaskForm placeholder="Please enter new task name" />
-                    <Tasks/>
-                </div>
-            </div>
-        );
-    }
-}
+const App = () => (
+    <div className="app">
+        <div className="app-header">
+            <h1>Todo</h1>
+        </div>
+        <div className="app-main">
+            <AddTaskForm placeholder="Please enter new task name" />
+            <Tasks/>
+        </div>
+    </div>
+);
 
 export default App;
